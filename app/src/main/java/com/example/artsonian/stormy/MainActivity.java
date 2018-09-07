@@ -30,6 +30,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String API_KEY = BuildConfig.API_KEY;
 
     private CurrentWeather currentWeather;
     private ImageView iconImageView;
@@ -55,11 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         iconImageView = findViewById(R.id.iconImageView);
 
-        String apiKey = "a69891e750ac013263b9570f6c65e5ac";
-
-
         String forecastURL = "https://api.darksky.net/forecast/"
-                + apiKey + "/" + latitude + "," + longitude;
+                + API_KEY + "/" + latitude + "," + longitude;
 
         if (isNetworkAvailable()) {
             OkHttpClient client = new OkHttpClient();

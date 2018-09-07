@@ -9,6 +9,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //PLEASE ENSURE YOU HAVE A VALID API KEY FOR DarkSky
+        //A VALID KEY WILL NEED TO BE ENTERED
+        buildConfigField("String", "API_KEY", API_KEY)
     }
     buildTypes {
         release {
