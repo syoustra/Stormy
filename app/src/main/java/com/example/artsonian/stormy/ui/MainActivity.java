@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.artsonian.stormy.BuildConfig;
 import com.example.artsonian.stormy.R;
 import com.example.artsonian.stormy.Weather.Current;
+import com.example.artsonian.stormy.Weather.Forecast;
 import com.example.artsonian.stormy.databinding.ActivityMainBinding;
 
 import org.json.JSONException;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     public static final String API_KEY = BuildConfig.API_KEY;
 
-    private Current current;
+    private Forecast forecast;
     private ImageView iconImageView;
 
 
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
                         Log.v(TAG, jsonData);
                         if (response.isSuccessful()) {
 
-                            current = getCurrentDetails(jsonData);
+                            forecast = parseForecastData(jsonData);
+
+                            Current current = forecast.getCurrent();
 
                             final Current displayWeather = new Current(
                                     current.getLocationLabel(),
@@ -120,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private Forecast parseForecastData(String jsonData) throws JSONException {
+        Forecast forecast = new Forecast();
+
+        forecast.setCurrent(getCurrentDetails(jsonData));
+
+        return forecast;
     }
 
     private Current getCurrentDetails(String jsonData) throws JSONException {
