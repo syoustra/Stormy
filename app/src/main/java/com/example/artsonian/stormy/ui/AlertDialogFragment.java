@@ -1,4 +1,4 @@
-package com.example.artsonian.stormy;
+package com.example.artsonian.stormy.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+
+import com.example.artsonian.stormy.R;
 
 public class AlertDialogFragment extends DialogFragment{
 

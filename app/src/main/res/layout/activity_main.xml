@@ -6,14 +6,14 @@
     <data>
         <variable
             name="weather"
-            type="com.example.artsonian.stormy.CurrentWeather"/>
+            type="com.example.artsonian.stormy.Weather.Current"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/appBackground"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
         <TextView
             android:id="@+id/temperatureValue"
