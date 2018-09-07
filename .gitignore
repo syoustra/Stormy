@@ -10,7 +10,7 @@
 .externalNativeBuild
 
 ## TO MASK API KEY
-#/gradle.properties
+/gradle.properties
 
 ### Android template
 # Built application files
