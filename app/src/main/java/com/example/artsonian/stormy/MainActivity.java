@@ -1,6 +1,7 @@
 package com.example.artsonian.stormy;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.artsonian.stormy.databinding.ActivityMainBinding;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        final ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
+                R.layout.activity_main);
 
         TextView darkSky = findViewById(R.id.darkSkyAttribution);
 
@@ -66,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
 
                             currentWeather = getCurrentDetails(jsonData);
+
+                            CurrentWeather displayWeather = new CurrentWeather(
+                                    currentWeather.getLocationLabel(),
+                                    currentWeather.getIcon(),
+                                    currentWeather.getTime(),
+                                    currentWeather.getTemperature(),
+                                    currentWeather.getHumidity(),
+                                    currentWeather.getPrecipChance(),
+                                    currentWeather.getSummary(),
+                                    currentWeather.getTimeZone()
+                            );
+
+                            binding.setWeather(displayWeather);
 
                         } else {
                             alertUserAboutError();
