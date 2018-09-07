@@ -44,7 +44,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:text="@{`At ` + String.valueOf(weather.formattedTime) + `it will be`, default=`At 5:00 PM it will be`}"
+            android:text="@{`At ` + String.valueOf(weather.formattedTime) + ` it will be`, default=`At 5:00 PM it will be`}"
             android:textColor="@color/half_white"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/temperatureValue"

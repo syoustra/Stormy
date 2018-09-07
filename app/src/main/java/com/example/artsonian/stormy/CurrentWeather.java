@@ -101,7 +101,7 @@ public class CurrentWeather {
     }
 
     public String getFormattedTime() {
-        SimpleDateFormat formatter = new SimpleDateFormat("H;mm a");
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
 
         formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
 
