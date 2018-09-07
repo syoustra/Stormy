@@ -18,8 +18,10 @@ import com.example.artsonian.stormy.BuildConfig;
 import com.example.artsonian.stormy.R;
 import com.example.artsonian.stormy.Weather.Current;
 import com.example.artsonian.stormy.Weather.Forecast;
+import com.example.artsonian.stormy.Weather.Hour;
 import com.example.artsonian.stormy.databinding.ActivityMainBinding;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -129,8 +131,21 @@ public class MainActivity extends AppCompatActivity {
         Forecast forecast = new Forecast();
 
         forecast.setCurrent(getCurrentDetails(jsonData));
+        forecast.setHourlyForecast(getHourlyForecast(jsonData));
 
         return forecast;
+    }
+
+    private Hour[] getHourlyForecast(String jsonData) throws JSONException {
+        JSONObject forecast = new JSONObject(jsonData);
+        String timeZone = forecast.getString("timezone");
+
+        JSONObject hourly = forecast.getJSONObject("hourly");
+        JSONArray data = hourly.getJSONArray("data");
+
+
+        }
+
     }
 
     private Current getCurrentDetails(String jsonData) throws JSONException {
