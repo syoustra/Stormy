@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iconImageView;
 
 
-    final double latitude = 37.8267;
-    final double longitude = -122.4233;
+    final double latitude = 38.2542;
+    final double longitude = -85.7594;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
