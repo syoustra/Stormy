@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +32,21 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
     private CurrentWeather currentWeather;
-
     private ImageView iconImageView;
+
+
+    final double latitude = 37.8267;
+    final double longitude = -122.4233;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getForecast(latitude, longitude);
+
+        Log.d(TAG, "Main UI code is running, hooray!!");
+    }
+
+    private void getForecast(double latitude, double longitude) {
         final ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
                 R.layout.activity_main);
 
@@ -47,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         String apiKey = "a69891e750ac013263b9570f6c65e5ac";
 
-        double latitude = 37.8267;
-        double longitude = -122.4233;
 
         String forecastURL = "https://api.darksky.net/forecast/"
                 + apiKey + "/" + latitude + "," + longitude;
@@ -111,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        Log.d(TAG, "Main UI code is running, hooray!!");
     }
 
     private CurrentWeather getCurrentDetails(String jsonData) throws JSONException {
@@ -158,5 +164,10 @@ public class MainActivity extends AppCompatActivity {
     private void alertUserAboutError() {
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getSupportFragmentManager(), "error_dialog");
+    }
+
+    public void refreshOnClick(View view) {
+        Toast.makeText(this, "Refreshing data", Toast.LENGTH_LONG).show();
+        getForecast(latitude, longitude);
     }
 }
