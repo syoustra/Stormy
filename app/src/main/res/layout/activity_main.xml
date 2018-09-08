@@ -163,7 +163,7 @@
             android:id="@+id/darkSkyAttribution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:text="@string/dark_sky_message"
@@ -186,6 +186,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/refresh" />
+
+        <Button
+            android:id="@+id/hourlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="#40FFFFFF"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Hourly Forecast"
+            android:textColor="@android:color/white"
+            android:onClick="hourlyOnClick"
+            app:layout_constraintBottom_toTopOf="@+id/darkSkyAttribution"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/summaryValue" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

@@ -1,6 +1,7 @@
 package com.example.artsonian.stormy.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
@@ -211,5 +212,10 @@ public class MainActivity extends AppCompatActivity {
     public void refreshOnClick(View view) {
         Toast.makeText(this, "Refreshing data", Toast.LENGTH_LONG).show();
         getForecast(latitude, longitude);
+    }
+
+    public void hourlyOnClick(View view) {
+        Intent intent = new Intent(this, HourlyForecastActivity.class);
+        startActivity(intent);
     }
 }
