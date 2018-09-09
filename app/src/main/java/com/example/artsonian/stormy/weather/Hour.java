@@ -1,4 +1,4 @@
-package com.example.artsonian.stormy.Weather;
+package com.example.artsonian.stormy.weather;
 
 public class Hour {
 

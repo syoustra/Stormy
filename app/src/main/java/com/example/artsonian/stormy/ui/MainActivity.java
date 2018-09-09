@@ -17,9 +17,9 @@ import android.widget.Toast;
 
 import com.example.artsonian.stormy.BuildConfig;
 import com.example.artsonian.stormy.R;
-import com.example.artsonian.stormy.Weather.Current;
-import com.example.artsonian.stormy.Weather.Forecast;
-import com.example.artsonian.stormy.Weather.Hour;
+import com.example.artsonian.stormy.weather.Current;
+import com.example.artsonian.stormy.weather.Forecast;
+import com.example.artsonian.stormy.weather.Hour;
 import com.example.artsonian.stormy.databinding.ActivityMainBinding;
 
 import org.json.JSONArray;

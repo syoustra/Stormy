@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.artsonian.stormy.R;
-import com.example.artsonian.stormy.Weather.Hour;
+import com.example.artsonian.stormy.weather.Hour;
 import com.example.artsonian.stormy.databinding.HourlyListItemBinding;
 
 import java.util.List;

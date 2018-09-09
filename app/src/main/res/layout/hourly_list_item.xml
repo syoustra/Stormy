@@ -5,7 +5,7 @@
     <data>
         <variable
             name="hour"
-            type="com.example.artsonian.stormy.Weather.Hour"/>
+            type="com.example.artsonian.stormy.weather.Hour"/>
     </data>
 
 
