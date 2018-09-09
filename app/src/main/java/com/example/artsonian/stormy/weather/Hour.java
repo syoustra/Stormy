@@ -8,6 +8,17 @@ public class Hour {
     private String icon;
     private String timeZone;
 
+    public Hour() {
+    }
+
+    public Hour(long time, String summary, double temperature, String icon, String timeZone) {
+        this.time = time;
+        this.summary = summary;
+        this.temperature = temperature;
+        this.icon = icon;
+        this.timeZone = timeZone;
+    }
+
     public long getTime() {
         return time;
     }
