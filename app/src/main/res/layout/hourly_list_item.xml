@@ -36,6 +36,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/timeLabel"
             android:layout_toEndOf="@id/timeLabel"
+            app:imageResource="@{hour.icon}"
             app:srcCompat="@drawable/partly_cloudy" />
 
         <TextView

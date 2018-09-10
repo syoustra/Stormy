@@ -1,5 +1,9 @@
 package com.example.artsonian.stormy.weather;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class Hour {
 
     private long time;
@@ -19,8 +23,12 @@ public class Hour {
         this.timeZone = timeZone;
     }
 
-    public long getTime() {
-        return time;
+    public String getTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("h a");
+        formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+
+        Date dateTime = new Date(time * 1000);
+        return formatter.format(dateTime);
     }
 
     public void setTime(long time) {
@@ -35,16 +43,16 @@ public class Hour {
         this.summary = summary;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public int getTemperature() {
+        return (int) Math.round(temperature);
     }
 
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
-    public String getIcon() {
-        return icon;
+    public int getIcon() {
+        return Forecast.getIconId(icon);
     }
 
     public void setIcon(String icon) {
